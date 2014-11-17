@@ -14,4 +14,4 @@ COPY ./your_app/run /etc/service/your_app/run
 
 COPY runit_bootstrap /usr/sbin/runit_bootstrap
 RUN chmod 755 /usr/sbin/runit_bootstrap
-ENTRYPOINT ["/usr/sbin/runit_bootstrap"]
+ENTRYPOINT ["/usr/sbin/runsvdir-start", "-P /etc/service"]
